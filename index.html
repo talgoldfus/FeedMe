@@ -13,6 +13,18 @@
         <input type="submit" value="Submit"/>
     </form>
 
+    <div id="displayTimes"></div>
+  <script id="cooktime-template" type="text/x-handlebars-template">
+    <div id="display-cooktime">
+      <h1>How much time you have to cook? </h1>
+      <div class="" >
+        {{#each recipeProfiles}}
+          <a href="#" onclick="showProfiles(this);return false;" data-cookingTime = {{times}}><h1>{{range}}</h1></a>
+        {{/each}}
+       </div>
+    </div>
+  </script>
+
 </body>
 
 

@@ -21,17 +21,33 @@ const RecipeProfile = (function RecipeProfile (){
       }
 
 
-
-      static cookingTimesRange(){
-        var times =  store.recipeProfiles.map( (element) => {
+      static times(){
+        return  store.recipeProfiles.map( (element) => {
           return element.totalTimeInSeconds
         })
+      }
 
+      static cookingTimesString(){
+          var times = this.cookingTimesRange()
+          var min = `Up to ${times[0]/60} minutes.`
+          var avg = `${times[0]/60} to ${parseInt(times[1]/60)} minutes.`
+          var max = `${parseInt(times[1]/60)} to ${times[2]/60} minutes.`
+          return [{range: min, times: times[0]}, {range: avg, times: times[1]}, {range: max, times: times[2]}]
+      }
+
+      static cookingTimesRange(){
+        var times = this.times()
         var max= Math.max(...times)
         var min = Math.min(...times)
         var sum = times.reduce((x, y) => x += y);
         var avg = sum / times.length;
         return [min, parseInt(avg), max]
+      }
+
+      static filterByRange(range){
+        return store.recipeProfiles.filter((object) => {
+          return object.totalTimeInSeconds <= range
+        })
       }
   }
 
