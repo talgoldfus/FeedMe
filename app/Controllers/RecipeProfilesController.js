@@ -10,7 +10,14 @@ function searchRecipes(){
 }
 
 function showProfiles(element){
-  RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]))
+
+
+  var source   = $("#profile-template").html();
+  var template = Handlebars.compile(source)
+  var context = {recipeProfiles: RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]))}
+  var html   = template(context)
+
+  $('#displayProfiles').append(html)
 
 }
 

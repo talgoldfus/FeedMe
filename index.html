@@ -24,6 +24,18 @@
        </div>
     </div>
   </script>
+ <div id="displayProfiles"></div>
+  <script id="profile-template" type="text/x-handlebars-template">
+    <div id="display-profile">
+      <h1>Here are your recipes! </h1>
+      <div class="" >
+        {{#each recipeProfiles}}
+          <img src = {{profile_image}}>
+
+        {{/each}}
+       </div>
+    </div>
+  </script>
 
 </body>
 
