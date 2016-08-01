@@ -22,17 +22,23 @@ template = `
         <img src={{profile_image}}>
         <h5>{{sourceDisplayName}}</h5>
         <h6>{{ingredients}}</h6>
-        <a href="#" onclick="getFullDetails(this);return false;" data-recipeid={{api_id}}><p>See full details</p></a>
+        <br>
+        <a onclick="$.fn.fullpage.moveTo(4,{{inc @index}});" data-recipeid={{api_id}}>See full details</a>
       </div>
       {{/each}}
   </div>
     `
+
+
 return template
 }
 
 
 function fullDetailsTemplate(){
-  template = `<div id="detail-recipe" class="container">
+
+  template = `
+
+  <div class="slide">
       <div>
         <h2>{{recipeDetail.name}} </h2>
         <img src = {{recipeDetail.image}}>
@@ -43,6 +49,7 @@ function fullDetailsTemplate(){
       `
   return template
 }
+
 
 
 

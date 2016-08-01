@@ -1,15 +1,17 @@
-function getFullDetails(element){
+function getFullDetails(recipe_api_id){
   // search to see if the API request is already in the database
 
-  let recipe = RecipeDetail.findByIpId(element.dataset["recipeid"])
+  let recipe = RecipeDetail.findByIpId(recipe_api_id)
   if(recipe){
     //if recipe already got pulled from the api just render the view
     showFullDetails(recipe)
   }
   else{
+
     // Make a get request to the api , create a new instance of the RecipeDetail class and render the view
-    getRecipe(element.dataset["recipeid"]).then(()=>{
-      let recipe = RecipeDetail.findByIpId(element.dataset["recipeid"])
+
+    getRecipe(recipe_api_id).then(()=>{
+      let recipe = RecipeDetail.findByIpId(recipe_api_id)
 
     //  element.dataset.recipeid
       showFullDetails(recipe)}
@@ -23,8 +25,7 @@ function showFullDetails(recipe){
   var template = Handlebars.compile(source)
   var context = {recipeDetail: recipe }
   var html   = template(context)
-  $(`#displayRecipe`).append(html)
-  $.fn.fullpage.moveTo(4)
+  $(`#displayRecipe`).after(html)
 }
 
 
