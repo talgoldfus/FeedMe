@@ -5,6 +5,9 @@ function searchRecipes(){
       ()=>{
         $('#searchedIngredients').val("")
         showTimes()
+        $.fn.fullpage.moveTo(2);
+
+
       }
     )
 }
@@ -17,6 +20,7 @@ function showProfiles(element){
   var html   = template(context)
   $('#displayProfiles').empty()
   $('#displayProfiles').append(html)
+  $.fn.fullpage.moveTo(3);
 
 }
 
