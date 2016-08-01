@@ -16,7 +16,8 @@ const RecipeProfile = (function RecipeProfile (){
       }
 
       static find(id){
-        return store.recipeProfiles.filter( id => id===this.id )[0]
+          return store.recipeProfiles.filter((element)=>{
+          return id === element.id })[0]
       }
 
       static times(){

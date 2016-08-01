@@ -1,9 +1,9 @@
-const store = {search:[], recipeProfiles:[],recipes:[]}
+const store = {profileSearch:[], recipeProfiles:[], detailSearch:[] ,recipesDetail:[]}
 const app_id= "a6ffa6ec"
 const app_key= "eb77ee9a7627c1689e7351f1630b4c4e"
 
   function populateSearch() {
-    var url= "http://api.yummly.com/v1/api/recipes?"
+    let url= "http://api.yummly.com/v1/api/recipes?"
     var input = $('#searchedIngredients').val()
 
   return $.ajax({
@@ -11,23 +11,24 @@ const app_key= "eb77ee9a7627c1689e7351f1630b4c4e"
       data:{_app_id:app_id, _app_key:app_key,q:input,requirePictures:"true",maxResult:50},
       dataType:'jsonp'}
     ).done((response)=>{
-      store.search = response.matches
-      CreateProfiles()
+      store.profileSearch = response.matches
+      createProfiles()
     })
 
 }
 
+function getRecipe(id) {
+    let url= "http://api.yummly.com/v1/api/recipe/"
 
-function showRecipe(id) {
-    var url= "http://api.yummly.com/v1/api/recipe/"
-
-  $.ajax({
+return $.ajax({
     url:url + id,
-    data2:{_app_id:app_id, _app_key:app_key},
+    data:{_app_id:app_id, _app_key:app_key},
     dataType:'jsonp'}
   ) .done((response)=>{
-
-    store.data.push(response)
+    store.detailSearch.push(response)
+    debugger
+  
+    createFullDetail()
   })
 
 }

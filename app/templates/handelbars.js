@@ -15,14 +15,25 @@ template = `
   <div id="display-profile">
     <p>Here are your recipes! </p>
       {{#each recipeProfiles}}
-      <div data-recipeId={{api_id}} >
+      <div >
         <h4>{{recipeName}}</h4>
         <h5>{{sourceDisplayName}}</h5>
         <h6>{{ingredients}}</h6>
         <img src = {{profile_image}}>
+        <a href="#" onclick="getFullDetails(this);return false;" data-recipeid={{api_id}}><p>See full detials</p></a>
       </div>
       {{/each}}
   </div>
     `
 return template
+}
+
+
+function fullDetailsTemplate(){
+  template = `
+    <div id="display-profile">
+
+    </div>
+      `
+  return template
 }
