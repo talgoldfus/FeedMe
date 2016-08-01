@@ -1,7 +1,7 @@
 function cooktimeTemplate(){
-  let template = `<div id="display-cooktime">
+  let template = `<div id="display-cooktime" class="row">
     <h1>How much time you have to cook? </h1>
-    <div class="" >
+    <div class="col-md-4">
       {{#each recipeProfiles}}
         <a href="#" onclick="showProfiles(this);return false;" data-cookingTime = {{times}}><h1>{{range}}</h1></a>
       {{/each}}
@@ -12,21 +12,37 @@ function cooktimeTemplate(){
 
 function profileTemplate(){
 template = `
-  <div id="display-profile">
+  <div id="display-profile" class="row">
     <p>Here are your recipes! </p>
       {{#each recipeProfiles}}
-      <div id={{api_id}}>
+      <div id={{api_id}} class="col-md-4">
         <h4>{{recipeName}}</h4>
+        <img src={{profile_image}}>
         <h5>{{sourceDisplayName}}</h5>
         <h6>{{ingredients}}</h6>
-        <img src = {{profile_image}}>
-        <a href="#" onclick="getFullDetails(this);return false;" data-recipeid={{api_id}}><p>See full detials</p></a>
+        <a href="#" onclick="getFullDetails(this);return false;" data-recipeid={{api_id}}><p>See full details</p></a>
       </div>
       {{/each}}
   </div>
     `
 return template
 }
+
+
+function fullDetailsTemplate(){
+  template = `<div id="detail-recipe" class="container">
+      <div>
+        <h2>{{recipeDetail.name}} </h2>
+        <img src = {{recipeDetail.image}}>        
+        <a href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
+      </div>
+    </div>
+
+      `
+  return template
+}
+
+
 
 // this.id= counter++
 // this.apiId = apiId
@@ -37,17 +53,3 @@ return template
 // this.totalTime = totalTime
 // this.numberOfServings = numberOfServings
 // this.rating = rating
-function fullDetailsTemplate(){
-  template = `<div id="detail-recipe">
-      <p>Here is your full recipe! </p>
-      <div>
-        <h2>{{recipeDetail.name}} </h2>
-        <h2>{{recipeDetail.source.sourceDisplayName}}</h2>
-        <img src = {{recipeDetail.image}}>
-        <a href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
-      </div>
-    </div>
-
-      `
-  return template
-}

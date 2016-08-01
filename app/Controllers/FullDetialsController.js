@@ -23,8 +23,8 @@ function showFullDetails(recipe){
   var template = Handlebars.compile(source)
   var context = {recipeDetail: recipe }
   var html   = template(context)
-//  $(`#${recipe.apiId}`).empty()
-  $(`#${recipe.apiId}`).append(html)
+  $(`#displayRecipe`).append(html)
+  $.fn.fullpage.moveTo(4)
 }
 
 
