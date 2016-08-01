@@ -23,7 +23,7 @@ template = `
         <h5>{{sourceDisplayName}}</h5>
         <h6>{{ingredients}}</h6>
         <br>
-        <a onclick="$.fn.fullpage.moveTo(4,{{inc @index}});" data-recipeid={{api_id}}>See full details</a>
+        <a onclick="$.fn.fullpage.moveTo(4,'slide{{api_id}}');" data-recipeid={{api_id}}>See full details</a>
       </div>
       {{/each}}
   </div>
@@ -38,7 +38,7 @@ function fullDetailsTemplate(){
 
   template = `
 
-  <div class="slide">
+  <div class="slide" data-anchor="slide{{recipeDetail.apiId}}">
       <div>
         <h2>{{recipeDetail.name}} </h2>
         <img src = {{recipeDetail.image}}>

@@ -6,27 +6,45 @@ function searchRecipes(){
         $('#searchedIngredients').val("")
         showTimes()
         $.fn.fullpage.moveTo(2);
-
-
       }
     )
 }
 
 function showProfiles(element){
-jQuery.when( (function() {
+
   let collection = RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]),6)
+
+  // Promise.all([getFullDetails(collection[0].api_id),getFullDetails(collection[1].api_id),getFullDetails(collection[2].api_id)])
+
   collection.forEach((recipe)=>{getFullDetails(recipe.api_id)})
+
+
+
+
   var source   = profileTemplate();
   var template = Handlebars.compile(source)
   var context = {recipeProfiles: RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]),6)}
   var html   = template(context)
   $('#displayProfiles').empty()
   $('#displayProfiles').append(html)
+
+setTimeout(
+  function() {
+  $.fn.fullpage.destroy('all')
+
+  $('#fullpage').fullpage( {
+    anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ]
+  })
+
   $.fn.fullpage.moveTo(3);
-}())
-).done($.fn.fullpage.reBuild())
+}, 150);
+
+
 
 }
+
+
+
 
 function createProfiles(){
    store.profileSearch.forEach( (element) => {

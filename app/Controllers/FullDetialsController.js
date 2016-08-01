@@ -17,6 +17,7 @@ function getFullDetails(recipe_api_id){
       showFullDetails(recipe)}
       )
     }
+
 }
 
 
