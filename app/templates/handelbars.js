@@ -1,11 +1,13 @@
 function cooktimeTemplate(){
-  let template = `<div id="display-cooktime" class="row">
+  let template = `<div id="display-cooktime" class="row text-center">
     <h1>How much time you have to cook? </h1>
-    <div class="col-md-4">
+
       {{#each recipeProfiles}}
+      <div class="col-md-4">
         <a href="#" onclick="showProfiles(this);return false;" data-cookingTime = {{times}}><h1>{{range}}</h1></a>
+         </div>
       {{/each}}
-     </div>
+
   </div>`
   return template
 }
@@ -33,7 +35,7 @@ function fullDetailsTemplate(){
   template = `<div id="detail-recipe" class="container">
       <div>
         <h2>{{recipeDetail.name}} </h2>
-        <img src = {{recipeDetail.image}}>        
+        <img src = {{recipeDetail.image}}>
         <a href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
       </div>
     </div>
