@@ -31,9 +31,7 @@ return template
 
 function fullDetailsTemplate(){
   template = `
-    <div id="display-profile">
-
-    </div>
+  
       `
   return template
 }

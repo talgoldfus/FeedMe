@@ -3,15 +3,10 @@ const RecipeDetail = ( function RecipeDetail(){
   var counter = 0
 
   return class  {
-    constructor(recipeName,flavors,ingredients,api_id,sourceDisplayName,totalTimeInSeconds,profile_image) {
+
+    constructor(  //need to fill those in
+    ) {
         this.id= counter++
-        this.recipeName=recipeName
-        this.flavors = flavors //object
-        this.ingredients=ingredients //object
-        this.api_id= api_id
-        this.sourceDisplayName = sourceDisplayName
-        this.totalTimeInSeconds = totalTimeInSeconds
-        this.profile_image = profile_image
         store.recipesDetail.push(this)
       }
 

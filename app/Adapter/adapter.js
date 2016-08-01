@@ -26,8 +26,7 @@ return $.ajax({
     dataType:'jsonp'}
   ) .done((response)=>{
     store.detailSearch.push(response)
-    debugger
-  
+    // this will call on the method that will create new instances of the RecipeDetail class
     createFullDetail()
   })
 
