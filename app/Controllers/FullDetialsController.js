@@ -19,7 +19,7 @@ function showFullDetails(recipe){
   var template = Handlebars.compile(source)
   var context = {recipeDetail: recipe }
   var html   = template(context)
-  // need to append the rendered info
+  $(`*[data-recipeid="${recipe.ip_id}"]`).append(html)
 }
 
 
