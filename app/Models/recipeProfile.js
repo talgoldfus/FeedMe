@@ -12,14 +12,12 @@ const RecipeProfile = (function RecipeProfile (){
         this.sourceDisplayName = sourceDisplayName
         this.totalTimeInSeconds = totalTimeInSeconds
         this.profile_image = profile_image
-
         store.recipeProfiles.push(this)
       }
 
       static find(id){
         return store.recipeProfiles.filter( id => id===this.id )[0]
       }
-
 
       static times(){
         return  store.recipeProfiles.map( (element) => {
@@ -44,10 +42,10 @@ const RecipeProfile = (function RecipeProfile (){
         return [min, parseInt(avg), max]
       }
 
-      static filterByRange(range){
+      static filterByRange(range,quantity){
         return store.recipeProfiles.filter((object) => {
           return object.totalTimeInSeconds <= range
-        })
+        }).slice(0,quantity)
       }
   }
 

@@ -7,39 +7,18 @@
 
 <body>
 
-    <form id="search_bar" onsubmit="searchRecipes();return false;">
-        <label for="searchedIngredients">Search</label>
-        <input type="text" id="searchedIngredients" />
-        <input type="submit" value="Submit"/>
-    </form>
+  <form id="search_bar" onsubmit="searchRecipes();return false;">
+      <label for="searchedIngredients">Search</label>
+      <input type="text" id="searchedIngredients" />
+      <input type="submit" value="Submit"/>
+  </form>
 
-    <div id="displayTimes"></div>
-  <script id="cooktime-template" type="text/x-handlebars-template">
-    <div id="display-cooktime">
-      <h1>How much time you have to cook? </h1>
-      <div class="" >
-        {{#each recipeProfiles}}
-          <a href="#" onclick="showProfiles(this);return false;" data-cookingTime = {{times}}><h1>{{range}}</h1></a>
-        {{/each}}
-       </div>
-    </div>
-  </script>
- <div id="displayProfiles"></div>
-  <script id="profile-template" type="text/x-handlebars-template">
-    <div id="display-profile">
-      <h1>Here are your recipes! </h1>
-      <div class="" >
-        {{#each recipeProfiles}}
-          <img src = {{profile_image}}>
-
-        {{/each}}
-       </div>
-    </div>
-  </script>
+  <div id="displayTimes"></div>
+  <div id="displayProfiles"></div>
 
 </body>
 
-
+<script src="app/templates/handelbars.js"></script>
 <script src="app/Adapter/adapter.js"></script>
 <script src="resources/jquery-3.1.0.min.js"></script>
 <script src="app/Models/recipeProfile.js"></script>

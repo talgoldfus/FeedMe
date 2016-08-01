@@ -12,11 +12,11 @@ function searchRecipes(){
 function showProfiles(element){
 
 
-  var source   = $("#profile-template").html();
+  var source   = profileTemplate();
   var template = Handlebars.compile(source)
-  var context = {recipeProfiles: RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]))}
+  var context = {recipeProfiles: RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]),6)}
   var html   = template(context)
-
+  $('#displayProfiles').empty()
   $('#displayProfiles').append(html)
 
 }
@@ -30,10 +30,10 @@ function CreateProfiles(){
 }
 
 function showTimes(){
-  var source   = $("#cooktime-template").html();
+  var source   = cooktimeTemplate();
   var template = Handlebars.compile(source)
   var context = {recipeProfiles: RecipeProfile.cookingTimesString()}
   var html   = template(context)
-
+  $('#displayTimes').empty()
   $('#displayTimes').append(html)
 }
