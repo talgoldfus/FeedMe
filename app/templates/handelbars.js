@@ -23,7 +23,7 @@ template = `
     <!--<h1>Here are your recipes! </h1>-->
       {{#each recipeProfiles}}
 
-        <div id={{api_id}} class="col-md-4 text-center clearfix">
+        <div id={{api_id}} class="col-md-4 text-center clearfix profile">
           <div class="thumbnail">
           <img src={{profile_image}}>
           <div class="caption  text-left">
@@ -71,12 +71,14 @@ function fullDetailsTemplate(){
                   <li><h5>{{{this}}}</h5></li>
                 {{/each}}
               </ul>
+              <br>
+              <h3>Cooking Time: {{recipeDetail.totalTime}}</h3>
             </div>
         </div>
             <br>
           <div class="row text-center">
             <div class="col-md-12 ">
-              <a class="btn btn-default" id="seeMore" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
+              <a class="btn btn-default" id="seeMore" href="{{recipeDetail.source.sourceRecipeUrl}}"> <h4> See Full Recipe </h4> </a>
             </div>
           </div>
 

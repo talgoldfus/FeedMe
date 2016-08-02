@@ -41,4 +41,13 @@ h1 {
 
 #seeMore{
   width: 80%;
+  background-color: #e8e8e8 ;
+}
+
+.profile{
+    margin-bottom: 10px;
+    margin-left: 45px;
+    padding: 2px;
+    max-width: 350px;
+    max-height: 350px;
 }
