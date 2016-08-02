@@ -6,6 +6,8 @@ $(document).ready(function() {
     anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ],
   });
 
+  $('#header').headroom();
+  
   Handlebars.registerHelper("inc", function(value, options)
   {
       return parseInt(value) + 1;
