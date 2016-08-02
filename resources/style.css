@@ -31,10 +31,14 @@ h1 {
     background-image: url("images/bigstock-Vegetables.png");
 }
 
-.slide {
+/*.slide {
     align-content: center;
 }
 
 .food {
     text-align: center;
+}*/
+
+#seeMore{
+  width: 80%;
 }

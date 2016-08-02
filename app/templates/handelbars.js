@@ -64,14 +64,19 @@ function fullDetailsTemplate(){
             <div class="col-md-8 text-center">
               <img src = {{recipeDetail.image}}>
             </div>
-            <div class="col-md-4 text-center clearfix">
-              <ul>{{recipeDetail.ingredientLines}} </ul>
+            <div class="col-md-4 text-left clearfix">
+            <h2>Ingredients:</h2>
+              <ul>
+                {{#each recipeDetail.highlighted}}
+                  <li><h5>{{{this}}}</h5></li>
+                {{/each}}
+              </ul>
             </div>
         </div>
             <br>
           <div class="row text-center">
             <div class="col-md-12 ">
-              <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
+              <a class="btn btn-default" id="seeMore" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
             </div>
           </div>
 
@@ -84,27 +89,3 @@ function fullDetailsTemplate(){
       `
   return template
 }
-
-
-// <div>
-// <div class="slide row text-center " data-anchor="slide{{recipeDetail.apiId}}">
-//     <div class="row text center">
-//       <h2>{{recipeDetail.name}} </h2>
-//     </div>
-//
-//    <div class="col-md-8 text-center clearfix">
-//       <img src = {{recipeDetail.image}}>
-//
-//     <div class="col-md-4 text-center clearfix">
-//       <ul>{{recipeDetail.ingredientLines}} </ul>
-//     </div>
-//
-//         <br>
-//     <div class="row force-to-bottom text-center">
-//       <div class="col-md-12 ">
-//         <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
-//       </div>
-//     </div>
-// </div>
-// </div>
-// </div>
