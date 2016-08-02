@@ -11,8 +11,16 @@ const RecipeProfile = (function RecipeProfile (){
         this.api_id= api_id
         this.sourceDisplayName = sourceDisplayName
         this.totalTimeInSeconds = totalTimeInSeconds
-        this.profile_image = profile_image
+        this.profile_image = this.changeImage(profile_image)
         store.recipeProfiles.push(this)
+      }
+
+        changeImage(image){
+        var arr = image.split("")
+        arr[arr.length-1] = "5"
+        arr[arr.length-2] = "3"
+        arr.push("0")
+        return arr.join("")
       }
 
       static find(id){

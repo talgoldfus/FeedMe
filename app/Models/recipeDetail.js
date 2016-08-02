@@ -4,7 +4,7 @@ const RecipeDetail = ( function RecipeDetail(){
 
   return class  {
 
-    constructor(apiId, name, image, source, ingredientLines, totalTime, numberOfServings, rating //need to fill those in
+    constructor(apiId, name, image, source, ingredientLines, totalTime, numberOfServings, rating, nutritionEstimates //need to fill those in
     ) {
         
         this.id= counter++
@@ -16,7 +16,19 @@ const RecipeDetail = ( function RecipeDetail(){
         this.totalTime = totalTime
         this.numberOfServings = numberOfServings
         this.rating = rating
+        this.nutritionEstimates = nutritionEstimates
+        
         store.recipesDetail.push(this)
+      }
+
+      caloryCount(){
+        let calCount = 0 
+        this.nutritionEstimates.forEach((nutir) => {
+          if (nutir.value){
+              calCount+=nutir.value
+          }
+         })
+        return calCount   
       }
 
       static find(id){

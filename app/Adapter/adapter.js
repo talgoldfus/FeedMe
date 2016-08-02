@@ -8,7 +8,7 @@ const app_key= "eb77ee9a7627c1689e7351f1630b4c4e"
 
   return jQuery.ajax({
       url:url,
-      data:{_app_id:app_id, _app_key:app_key,q:input,requirePictures:"true",maxResult:50},
+      data:{_app_id:app_id, _app_key:app_key,q:input,requirePictures:"true",maxResult:15},
       dataType:'jsonp'}
     ).done((response)=>{
       store.profileSearch = response.matches

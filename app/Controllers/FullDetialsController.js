@@ -36,7 +36,7 @@ function createFullDetail(){
    let recipe= store.detailSearch[store.detailSearch.length - 1]
   // need to create a new  RecipeDetail with the relavent details
 
-   new RecipeDetail (recipe.id, recipe.name, recipe.images[0].hostedLargeUrl, recipe.source, recipe.ingredientLines, recipe.totalTime, recipe.numberOfServings, recipe.rating)
+   new RecipeDetail (recipe.id, recipe.name, recipe.images[0].hostedLargeUrl, recipe.source, recipe.ingredientLines, recipe.totalTime, recipe.numberOfServings, recipe.rating, recipe.nutritionEstimates)
 
 
 }
