@@ -31,15 +31,31 @@ h1 {
     background-image: url("images/bigstock-Vegetables.png");
 }
 
-/*.slide {
-    align-content: center;
+#search_bar{
+
+
 }
 
-.food {
-    text-align: center;
-}*/
+.glyphicon-search{
+  padding-left: 5px;
+   font-size: 35px;
+   color: white;
+}
+input[type=text] {
+    opacity: 0.7;
+  border-radius: 15px;
+    width: 90%;
+    font-size: 35px;
+}
+
+input[type=submit] {
+visibility: hidden;
+}
+
+
 
 #seeMore{
+
   width: 80%;
   background-color: #e8e8e8 ;
 }
