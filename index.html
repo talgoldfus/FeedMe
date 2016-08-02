@@ -6,6 +6,7 @@
     <script src="resources/jquery-3.1.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="resources/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="resources/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="resources/style.css">
     <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="app/templates/handelbars.js"></script>
     <script src="app/Adapter/adapter.js"></script>
@@ -23,22 +24,23 @@
 <body>
 
 <div id="fullpage">
-    <div class="section jumbotron">
+    <div class="section jumbotron one">
         <!--jumbotron-->
+        <h1 class="food">FEED ME.</h1>
       <form id="search_bar" class="text-center" onsubmit="searchRecipes();return false;">
           <label for="searchedIngredients">Search</label>
           <input type="text" id="searchedIngredients" />
           <input type="submit" value="Submit"/>
       </form>
     </div>
-    <div class="section jumbotron">
+    <div class="section jumbotron two">
         <!--jumbotron-->
   <div id="displayTimes">
       <!--template-->
   </div>
     </div>
     <div class="section">
-  <div id="displayProfiles" class="container-fluid">
+  <div id="displayProfiles" class="container-fluid flexcontainer">
       <!--template-->
   </div>
     </div>

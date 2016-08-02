@@ -17,7 +17,7 @@ const RecipeProfile = (function RecipeProfile (){
 
         changeImage(image){
         var arr = image.split("")
-        arr[arr.length-1] = "5"
+        arr[arr.length-1] = "2"
         arr[arr.length-2] = "3"
         arr.push("0")
         return arr.join("")

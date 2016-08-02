@@ -14,18 +14,18 @@ function cooktimeTemplate(){
 
 function profileTemplate(){
 template = `
-  <div id="display-profile" class="row text-center">
-    <h1>Here are your recipes! </h1>
+  <div id="display-profile" class="text-center">
+    <!--<h1>Here are your recipes! </h1>-->
       {{#each recipeProfiles}}
 
-        <div id={{api_id}} class="col-md-4 text-center">
+        <div id={{api_id}} class="col-md-4 text-center clearfix">
           <div class="thumbnail">
           <img src={{profile_image}}>
           <div class="caption  text-left">
           <h4>{{recipeName}}</h4>
           <h5>{{sourceDisplayName}}</h5>
-          <h6>{{ingredients}}</h6>
-          <p><a class="btn btn-default" onclick="$.fn.fullpage.moveTo(4,'slide{{api_id}}');" data-recipeid={{api_id}}>See full details</a></p>
+          <!--<h6>{{ingredients}}</h6>-->
+          <p><a class="btn btn-default" onclick="$.fn.fullpage.moveTo(4,'slide{{api_id}}');" data-recipeid={{api_id}}>See More</a></p>
           </div>
         </div>
         </div>
