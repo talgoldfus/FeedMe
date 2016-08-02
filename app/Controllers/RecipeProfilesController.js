@@ -1,6 +1,8 @@
 
 
 function searchRecipes(){
+  store.profileSearch=[]
+  store.recipeProfiles=[]
   populateSearch().then(
       ()=>{
         $('#searchedIngredients').val("")

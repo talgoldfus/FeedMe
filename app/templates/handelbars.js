@@ -23,7 +23,7 @@ template = `
     <!--<h1>Here are your recipes! </h1>-->
       {{#each recipeProfiles}}
 
-        <div id={{api_id}} class="col-md-4 text-center clearfix profile">
+        <div id={{api_id}} title="{{recipeName}}" class="col-md-4 text-center clearfix profile">
           <div class="thumbnail">
           <img src={{profile_image}}>
           <div class="caption  text-left">

@@ -36,10 +36,15 @@ h1 {
 
 }
 
+ul{
+  padding-right: 10px;
+  height:300px;
+  overflow-y: scroll;
+}
 .glyphicon-search{
   padding-left: 5px;
    font-size: 35px;
-   color: white;
+   color: white
 }
 input[type=text] {
     opacity: 0.7;
@@ -53,7 +58,6 @@ visibility: hidden;
 }
 
 
-
 #seeMore{
 
   width: 80%;
@@ -64,6 +68,12 @@ visibility: hidden;
     margin-bottom: 10px;
     margin-left: 45px;
     padding: 2px;
-    max-width: 350px;
-    max-height: 350px;
+    width: 350px;
+    height: 350px;
+}
+.profile h4{
+width: 100%;
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
 }
