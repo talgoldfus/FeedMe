@@ -1,10 +1,11 @@
-const store = {profileSearch:[], recipeProfiles:[], detailSearch:[] ,recipesDetail:[]}
+const store = {searchString:[], profileSearch:[], recipeProfiles:[], detailSearch:[] ,recipesDetail:[]}
 const app_id= "a6ffa6ec"
 const app_key= "eb77ee9a7627c1689e7351f1630b4c4e"
 
   function populateSearch() {
     let url= "http://api.yummly.com/v1/api/recipes?"
     var input = $('#searchedIngredients').val()
+    store.searchString.push(input)
 
   return jQuery.ajax({
       url:url,

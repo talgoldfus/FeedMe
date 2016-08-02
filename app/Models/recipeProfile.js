@@ -14,7 +14,7 @@ const RecipeProfile = (function RecipeProfile (){
         this.profile_image = this.changeImage(profile_image)
         store.recipeProfiles.push(this)
       }
-
+        
         changeImage(image){
         var arr = image.split("")
         arr[arr.length-1] = "2"
