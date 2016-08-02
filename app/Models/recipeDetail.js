@@ -42,23 +42,22 @@ const RecipeDetail = ( function RecipeDetail(){
       }
 
       highlightIngredient(){
-              let input = store.searchString[store.searchString.length-1].split(" ")
-              let result = []
-              this.ingredientLines.forEach((ingredient) => {
-                let currentIngredient = ingredient
-                input.forEach((inputWord)=> {
-                  if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)===false){
-                      result.push(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)
-                    }
-                  else if (result.includes(currentIngredient)===false && result.includes(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)===false ){
-                    result.push(currentIngredient)
-
-             }
-                  }
-                )
-              })
-              return result
+        let input = store.searchString[store.searchString.length-1].split(" ")
+        let result = []
+        this.ingredientLines.forEach((ingredient) => {
+          let currentIngredient = ingredient
+          let htmlString = `<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`
+          input.forEach((inputWord)=> {
+            if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(htmlString)===false && result.includes(currentIngredient)===false){
+              result.push(htmlString)
             }
+            else if (result.includes(currentIngredient)===false && result.includes(htmlString)===false){
+              result.push(currentIngredient)
+            }
+          })       
+        })
+        return result
+      }
 
 
       static find(id){
