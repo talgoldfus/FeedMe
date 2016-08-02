@@ -37,7 +37,7 @@ setTimeout(
   })
 
   $.fn.fullpage.moveTo(3);
-}, 150);
+}, 300);
 
 
 

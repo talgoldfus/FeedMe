@@ -1,8 +1,32 @@
+/*#header{
+  height:12%;
+  position:fixed;
+  display:block;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  z-index:8;
+  text-align:left;
+}
+
+
+#header-image > .logo{
+  width:50%;
+  margin-bottom: 25px ;
+}*/
+
+.logo2{
+  width:70%;
+  text-align:left;
+  margin-bottom: 300px;
+}
+
 .jumbotron.one {
-    height: 33%;
-    background-image: url("http://newmoonrestaurants.com/wp-content/uploads/2013/12/NewMoon_100279490.jpg");
+    width: 100%;
+    background-image: url("images/bigstock-Vegetables.png");
 
 }
+
+
 
 .slide {
     align-content: center;
