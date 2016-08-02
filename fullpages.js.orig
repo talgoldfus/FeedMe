@@ -3,7 +3,12 @@
  */
 $(document).ready(function() {
   $('#fullpage').fullpage( {
+<<<<<<< HEAD
+    anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ]
+	  
+=======
     anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ],
+>>>>>>> 26bc763fe0687d97fea2f76aa991233334c9f3f0
   });
 
   Handlebars.registerHelper("inc", function(value, options)

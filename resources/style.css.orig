@@ -35,3 +35,24 @@
 .food {
     text-align: center;
 }
+<<<<<<< HEAD
+
+#flexcontainer {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    width: 500px;
+    height: auto;
+    min-height: 200px;
+}
+
+#flexcontainer .col-md-4 {
+
+    -webkit-flex: 130px 1;
+
+}
+.clearfix {
+     overflow: auto;
+ }
+=======
+>>>>>>> 26bc763fe0687d97fea2f76aa991233334c9f3f0

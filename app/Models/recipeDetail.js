@@ -10,7 +10,7 @@ const RecipeDetail = ( function RecipeDetail(){
         this.id= counter++
         this.apiId = apiId
         this.name = name
-        this.image = image  //images[0].hostedLargeUrl
+        this.image = this.changeImage(image)
         this.source = source
         this.ingredientLines = ingredientLines
         this.totalTime = totalTime
@@ -19,6 +19,15 @@ const RecipeDetail = ( function RecipeDetail(){
         this.nutritionEstimates = nutritionEstimates
         
         store.recipesDetail.push(this)
+      }
+
+      changeImage(image){
+        var arr = image.split("")
+        arr[arr.length-1] = "0"
+        arr[arr.length-2] = "0"
+        arr[arr.length-3] = "7"
+    
+        return arr.join("")
       }
 
       caloryCount(){
