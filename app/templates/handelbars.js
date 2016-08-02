@@ -45,7 +45,7 @@ function fullDetailsTemplate(){
   <div class="slide jumbotron text-center" data-anchor="slide{{recipeDetail.apiId}}">
         <img src = {{recipeDetail.image}}>
           <h2>{{recipeDetail.name}} </h2>
-          <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
+          <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}" target="_blank"> <p> See Full Recipe </p> </a>
   </div>
   </div>
 
@@ -53,15 +53,3 @@ function fullDetailsTemplate(){
   return template
 }
 
-
-
-
-// this.id= counter++
-// this.apiId = apiId
-// this.name = name
-// this.image = image  //images[0].hostedLargeUrl
-// this.source = source
-// this.ingredientLines = ingredientLines
-// this.totalTime = totalTime
-// this.numberOfServings = numberOfServings
-// this.rating = rating

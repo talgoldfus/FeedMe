@@ -11,21 +11,3 @@
 .food {
     text-align: center;
 }
-
-#flexcontainer {
-    display: -webkit-flex;
-    -webkit-flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    width: 500px;
-    height: auto;
-    min-height: 200px;
-}
-
-#flexcontainer .col-md-4 {
-
-    -webkit-flex: 130px 1;
-
-}
-.clearfix {
-     overflow: auto;
- }
