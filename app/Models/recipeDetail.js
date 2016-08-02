@@ -13,6 +13,7 @@ const RecipeDetail = ( function RecipeDetail(){
         this.image = this.changeImage(image)
         this.source = source
         this.ingredientLines = ingredientLines
+        this.highlighted = this.highlightIngredient()
         this.totalTime = totalTime
         this.numberOfServings = numberOfServings
         this.rating = rating
@@ -38,6 +39,24 @@ const RecipeDetail = ( function RecipeDetail(){
           }
          })
         return calCount
+      }
+
+      highlightIngredient(){
+        let input = store.searchString[store.searchString.length-1].split(" ")
+        let result = []
+        this.ingredientLines.forEach((ingredient) => {
+          let currentIngredient = ingredient
+          input.forEach((inputWord)=> {
+              if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase())){
+                result.push(`<mark>${currentIngredient}</mark>`)
+              }
+              else {
+                result.push(currentIngredient)
+              }
+          })
+        })
+        return result
+
       }
 
       static find(id){
