@@ -42,10 +42,25 @@ function fullDetailsTemplate(){
 
   template = `
   <div>
-  <div class="slide jumbotron text-center" data-anchor="slide{{recipeDetail.apiId}}">
+  <div class="slide row text-center " data-anchor="slide{{recipeDetail.apiId}}">
+      <div class="row text center">
+        <h2>{{recipeDetail.name}} </h2>
+      </div>
+
+     <div class="col-md-8 text-center clearfix">
         <img src = {{recipeDetail.image}}>
-          <h2>{{recipeDetail.name}} </h2>
-          <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}" target="_blank"> <p> See Full Recipe </p> </a>
+          
+      <div class="col-md-4 text-center clearfix">
+        <ul>{{recipeDetail.ingredientLines}} </ul>
+      </div>
+          
+          <br>
+      <div class="row force-to-bottom text-center">
+        <div class="col-xs-12">
+          <a class="btn btn-default" href="{{recipeDetail.source.sourceRecipeUrl}}"> <p> See Full Recipe </p> </a>
+        </div>
+      </div>
+  </div>
   </div>
   </div>
 
