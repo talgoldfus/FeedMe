@@ -32,12 +32,13 @@ setTimeout(
   function() {
   $.fn.fullpage.destroy('all')
 
-  $('#fullpage').fullpage( {
-    anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ]
-  })
+  loadfullPage()
+  // $('#fullpage').fullpage( {
+  //   anchors: ['recipeSearch', 'timeSelect', 'recipeIndex', 'individualRecipes' ]
+  // })
 
   $.fn.fullpage.moveTo(3);
-}, 300);
+}, 320);
 
 
 
