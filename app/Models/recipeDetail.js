@@ -47,7 +47,7 @@ const RecipeDetail = ( function RecipeDetail(){
               this.ingredientLines.forEach((ingredient) => {
                 let currentIngredient = ingredient
                 input.forEach((inputWord)=> {
-                  if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(currentIngredient)===false){
+                  if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)===false){
                       result.push(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)
                     }
                   else if (result.includes(currentIngredient)===false && result.includes(`<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`)===false ){
