@@ -13,27 +13,27 @@ function searchRecipes() {
 function showProfiles(element) {
 
     let collection = RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]), 6)
+    
     var getRecipeAndBindItToPromise = function createPromisses(recipe){
       return new Promise((resolve) =>{
           resolve(getFullDetails(recipe.api_id))
        })
     }
-    
+
     var recipePromiseList =collection.map(getRecipeAndBindItToPromise)
     var results = Promise.all(recipePromiseList);
 
     results.then((recipe_results)=>{
-    var source = profileTemplate();
-    var template = Handlebars.compile(source)
-    var context = {  recipeProfiles: collection}
-    var html = template(context)
-    $('#displayProfiles').empty()
-    $('#displayProfiles').append(html)
-    $.fn.fullpage.destroy('all')
-    loadfullPage()
-    $.fn.fullpage.moveTo(3)
+      var source = profileTemplate();
+      var template = Handlebars.compile(source)
+      var context = {  recipeProfiles: collection}
+      var html = template(context)
+      $('#displayProfiles').empty()
+      $('#displayProfiles').append(html)
+      $.fn.fullpage.destroy('all')
+      loadfullPage()
+      $.fn.fullpage.moveTo(3)
   })
-
 }
 
 // function showProfiles(element) {
