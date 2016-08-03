@@ -1,5 +1,5 @@
-function cooktimeTemplate(){
-  let template = `<div id="display-cooktime" class="row text-center">
+function cooktimeTemplate() {
+    let template = `<div id="display-cooktime" class="row text-center">
     <h1>How much time you have to cook? </h1>
     <br>
     <div class="row">
@@ -14,15 +14,14 @@ function cooktimeTemplate(){
       {{/each}}
     </div>
   </div>`
-  return template
+    return template
 }
 
-function profileTemplate(){
-template = `
+function profileTemplate() {
+    template = `
   <div id="display-profile" class="text-center">
     <!--<h1>Here are your recipes! </h1>-->
       {{#each recipeProfiles}}
-
         <div id={{api_id}} title="{{recipeName}}" class="col-md-4 text-center clearfix profile">
           <div class="thumbnail">
           <img src={{profile_image}}>
@@ -37,20 +36,12 @@ template = `
       {{/each}}
   </div>
     `
-
-
-return template
+    return template
 }
 
 
-function fullDetailsTemplate(){
-
-
-
-
-
-
-  template = `
+function fullDetailsTemplate() {
+    template = `
   <div>
       <div class="slide row text-center " data-anchor="slide{{recipeDetail.apiId}}">
       <div class="col-md-10 col-md-offset-1 ">
@@ -81,13 +72,10 @@ function fullDetailsTemplate(){
               <a class="btn btn-default" id="seeMore" href="{{recipeDetail.source.sourceRecipeUrl}}"> <h4> See Full Recipe </h4> </a>
             </div>
           </div>
-
         </div>
         <div>
       </div>
-
   </div>
-
       `
-  return template
+    return template
 }
