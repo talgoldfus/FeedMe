@@ -4,8 +4,8 @@ const RecipeDetail = ( function RecipeDetail(){
 
   return class  {
 
-    constructor(apiId, name, image, source, ingredientLines, totalTime, numberOfServings, rating, nutritionEstimates //need to fill those in
-    ) {
+    constructor(apiId, name, image, source, ingredientLines, totalTime, numberOfServings, rating, nutritionEstimates,totalTimeInSeconds)
+    {
 
         this.id= counter++
         this.apiId = apiId
@@ -18,9 +18,10 @@ const RecipeDetail = ( function RecipeDetail(){
         this.numberOfServings = numberOfServings
         this.rating = rating
         this.nutritionEstimates = nutritionEstimates
-
+        this.totalTimeInSeconds = totalTimeInSeconds
         store.recipesDetail.push(this)
       }
+
 
       changeImage(image){
         var arr = image.split("")
@@ -29,16 +30,6 @@ const RecipeDetail = ( function RecipeDetail(){
         arr[arr.length-3] = "5"
 
         return arr.join("")
-      }
-
-      caloryCount(){
-        let calCount = 0
-        this.nutritionEstimates.forEach((nutir) => {
-          if (nutir.value){
-              calCount+=nutir.value
-          }
-         })
-        return calCount
       }
 
       highlightIngredient(){
@@ -54,7 +45,7 @@ const RecipeDetail = ( function RecipeDetail(){
             else if (result.includes(currentIngredient)===false && result.includes(htmlString)===false){
               result.push(currentIngredient)
             }
-          })       
+          })
         })
         return result
       }

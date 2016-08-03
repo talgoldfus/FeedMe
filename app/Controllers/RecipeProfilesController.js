@@ -11,9 +11,11 @@ function searchRecipes() {
 }
 
 function showProfiles(element) {
+    //clear the full detail slides section
+    $(`#displayRecipe`).nextAll().remove()
 
     let collection = RecipeProfile.filterByRange(parseInt(element.dataset["cookingtime"]), 6)
-    
+
     var getRecipeAndBindItToPromise = function createPromisses(recipe){
       return new Promise((resolve) =>{
           resolve(getFullDetails(recipe.api_id))

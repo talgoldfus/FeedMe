@@ -3,7 +3,7 @@ function getFullDetails(recipe_api_id) {
     let recipe = RecipeDetail.findByIpId(recipe_api_id)
     if (recipe) {
         //if recipe already got pulled from the api just render the view
-        return new Promise(resolve=>resolve(showFullDetails(recipe)))
+        showFullDetails(recipe)
     }
         // Make a get request to the api , create a new instance of the RecipeDetail class and render the view
         return getRecipe(recipe_api_id).then(() => {
