@@ -7,19 +7,26 @@ const RecipeProfile = (function RecipeProfile (){
         this.id= counter++
         this.recipeName=recipeName
         this.flavors = flavors //object
-        this.ingredients=ingredients //object
+        this.ingredients=ingredients
         this.api_id= api_id
         this.sourceDisplayName = sourceDisplayName
         this.totalTimeInSeconds = totalTimeInSeconds
-        this.profile_image = profile_image
-
+        this.profile_image = this.changeImage(profile_image)
         store.recipeProfiles.push(this)
+      }
+        
+        changeImage(image){
+        var arr = image.split("")
+        arr[arr.length-1] = "2"
+        arr[arr.length-2] = "3"
+        arr.push("0")
+        return arr.join("")
       }
 
       static find(id){
-        return store.recipeProfiles.filter( id => id===this.id )[0]
+          return store.recipeProfiles.filter((element)=>{
+          return id === element.id })[0]
       }
-
 
       static times(){
         return  store.recipeProfiles.map( (element) => {
@@ -44,10 +51,10 @@ const RecipeProfile = (function RecipeProfile (){
         return [min, parseInt(avg), max]
       }
 
-      static filterByRange(range){
+      static filterByRange(range,quantity){
         return store.recipeProfiles.filter((object) => {
           return object.totalTimeInSeconds <= range
-        })
+        }).slice(0,quantity)
       }
   }
 

@@ -1,0 +1,78 @@
+body{
+  background-image:url("images/bg.png");
+  background-size: 100%;
+}
+
+header{
+  height:12%;
+  position:fixed;
+  display:block;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  z-index:8;
+  text-align:left;
+}
+
+
+#header-image > .logo{
+  width:50%;
+  margin-bottom: 25px ;
+}
+
+h1 {
+  color: white;
+}
+
+.btn-default h1 {
+  color: black;
+}
+.jumbotron.one {
+    width: 100%;
+    background-image: url("images/bigstock-Vegetables.png");
+}
+
+#search_bar{
+
+
+}
+
+ul{
+  padding-right: 10px;
+  height:300px;
+  overflow-y: scroll;
+}
+.glyphicon-search{
+  padding-left: 5px;
+   font-size: 35px;
+   color: white
+}
+input[type=text] {
+    opacity: 0.7;
+  border-radius: 15px;
+    width: 90%;
+    font-size: 35px;
+}
+
+input[type=submit] {
+visibility: hidden;
+}
+
+
+#seeMore{
+  width: 80%;
+  background-color: #e8e8e8 ;
+}
+
+.profile{
+    margin-bottom: 10px;
+    margin-left: 45px;
+    padding: 2px;
+    width: 350px;
+    height: 350px;
+}
+.profile h4{
+width: 100%;
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+}

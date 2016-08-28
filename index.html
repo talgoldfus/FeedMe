@@ -1,49 +1,72 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>FeedMe</title>
+    <script src="resources/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="resources/style.css">
+    <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app/Views/handelbars.js"></script>
+    <script src="app/Adapter/adapter.js"></script>
+    <script src="app/Models/recipeProfile.js"></script>
+    <script src="app/Models/recipeDetail.js"></script>
+    <script src="app/Controllers/RecipeProfilesController.js"></script>
+    <script src="resources/handlebars-v4.0.5.js"></script>
+    <script src="app/Controllers/FullDetialsController.js"></script>
+    <script src="resources/jquery.fullPage.js"></script>
+    <script src="fullpages.js"></script>
+
+
 </head>
 
 <body>
 
-    <form id="search_bar" onsubmit="searchRecipes();return false;">
-        <label for="searchedIngredients">Search</label>
-        <input type="text" id="searchedIngredients" />
-        <input type="submit" value="Submit"/>
-    </form>
+<header id="header">
 
-    <div id="displayTimes"></div>
-  <script id="cooktime-template" type="text/x-handlebars-template">
-    <div id="display-cooktime">
-      <h1>How much time you have to cook? </h1>
-      <div class="" >
-        {{#each recipeProfiles}}
-          <a href="#" onclick="showProfiles(this);return false;" data-cookingTime = {{times}}><h1>{{range}}</h1></a>
-        {{/each}}
-       </div>
+    <div id="header-image">
+      <image class="logo" src="resources/images/logo.png" ></image>
     </div>
-  </script>
- <div id="displayProfiles"></div>
-  <script id="profile-template" type="text/x-handlebars-template">
-    <div id="display-profile">
-      <h1>Here are your recipes! </h1>
-      <div class="" >
-        {{#each recipeProfiles}}
-          <img src = {{profile_image}}>
+  </header>
 
-        {{/each}}
-       </div>
+<div id="fullpage">
+
+
+    <div class="section jumbotron one">
+
+
+        <div class="row">
+         <div class="col-sm-8 col-sm-offset-1">
+                 <form id="search_bar" class="text-center" onsubmit="searchRecipes();return false;">
+                  <input type="text" id="searchedIngredients" placeholder="Enter your ingredients seperated by spaces." />
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                  <input type="submit" value="Search" />
+              </form>
+          </div>
+        </div>
+
     </div>
-  </script>
+    <div class="section two">
+        <!--jumbotron-->
+  <div id="displayTimes">
+      <!--template-->
+  </div>
+    </div>
+    <div class="section">
+  <div id="displayProfiles" class="container-fluid flexcontainer">
+      <!--template-->
+  </div>
+    </div>
+    <div class="section">
+        <div id="displayRecipe"></div>
+            <!--template-->
 
+    </div>
+</div>
 </body>
 
 
-<script src="app/Adapter/adapter.js"></script>
-<script src="resources/jquery-3.1.0.min.js"></script>
-<script src="app/Models/recipeProfile.js"></script>
-<script src="app/Controllers/RecipeProfilesController.js"></script>
-<script src="resources/handlebars-v4.0.5.js"></script>
+
 
 </html>
