@@ -13,6 +13,7 @@ const app_key= "eb77ee9a7627c1689e7351f1630b4c4e"
       dataType:'jsonp'}
     ).done((response)=>{
       store.profileSearch = response.matches
+      //Create Recipe Profile objects for returned results via the controller.
       createProfiles()
     })
 
