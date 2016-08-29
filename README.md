@@ -12,3 +12,7 @@ Clone to your local machine and run index.html in the browser.
 * Yummly API 
 * FullPage.js 
 * Bootstrap
+
+## Todos
+1) Refracture the highlightIngredient method in the recipeDetail model. 
+2) Add buy all missing ingredients feature via a online shoping sevice API
