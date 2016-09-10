@@ -39,13 +39,13 @@ const RecipeDetail = ( function RecipeDetail(){
           let currentIngredient = ingredient
           let htmlString = `<mark>${currentIngredient}</mark><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>`
           input.forEach((inputWord)=> {
-            if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(htmlString)===false && result.includes(currentIngredient)===false){
+            if (currentIngredient.toLowerCase().includes(inputWord.toLowerCase()) && result.includes(htmlString)===false && result.includes(currentIngredient)===false){  
               result.push(htmlString)
-            }
-            else if (result.includes(currentIngredient)===false && result.includes(htmlString)===false){
-              result.push(currentIngredient)
-            }
+            } 
           })
+          if (result.includes(htmlString)===false){
+              result.push(currentIngredient)
+          }
         })
         return result
       }

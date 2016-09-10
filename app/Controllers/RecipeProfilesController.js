@@ -60,7 +60,6 @@ function showProfiles(element) {
       $.fn.fullpage.moveTo(3)
   })
 }
-<<<<<<< HEAD
 
 function createProfiles() {
     store.profileSearch.forEach((element) => {
@@ -80,5 +79,4 @@ function showTimes() {
     $('#displayTimes').empty()
     $('#displayTimes').append(html)
 }
-=======
->>>>>>> master
+
