@@ -60,3 +60,23 @@ function showProfiles(element) {
       $.fn.fullpage.moveTo(3)
   })
 }
+
+function createProfiles() {
+    store.profileSearch.forEach((element) => {
+        if (element.totalTimeInSeconds) {
+            new RecipeProfile(element.recipeName, element.flavors, element.ingredients, element.id, element.sourceDisplayName, element.totalTimeInSeconds, element.smallImageUrls[0])
+        }
+    })
+}
+
+function showTimes() {
+    var source = cooktimeTemplate();
+    var template = Handlebars.compile(source)
+    var context = {
+        recipeProfiles: RecipeProfile.cookingTimesString()
+    }
+    var html = template(context)
+    $('#displayTimes').empty()
+    $('#displayTimes').append(html)
+}
+
