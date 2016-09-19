@@ -1,8 +1,8 @@
 # Feed Me
  Find recipes according to the ingredients you have at home and your preferred cooking time. 
 
- ## Contributors 
- Tal Goldfus, Steven McGrath, and Clark Sacktor
+## Contributors 
+  Tal Goldfus, Steven McGrath, and Clark Sacktor
 
 ## Preview
 ![FeedMe](https://github.com/talgoldfus/FeedMe/blob/master/preview.gif)
